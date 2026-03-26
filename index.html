@@ -40,6 +40,7 @@
 		<div id="links">
 			<b>Games</b>
 			<br>
+				<a href="/recaptcha/" onmouseover="swap('recaptcha')"><img src="/recaptcha/icon.gif" class="inline-icon"> I'm Not A Robot</a><br>
 				<a href="/love" onmouseover="swap('love')"><img src="/love/icon.png" class="inline-icon"> Flower Game</a>
 				<br>
 				<a href="/pong" onmouseover="swap('pong')"><img src="/pong/favicon.png" class="inline-icon"> Classic Pong</a>
@@ -140,6 +141,14 @@ function swap(link, delayTimeout = true) {
 			text.style = "text-align: center;"
 			featureIndex = 0;
 			break;
+		case "recaptcha":
+			header.innerHTML = "NEW: I'm not a robot";
+			thumbnail.src = "/images/hover/inar.gif";
+			thumbnail.style.display = "inline-block";
+			thumbnail.classList.toggle("bespoke", true);
+			text.innerHTML = "Play a memory match game with random tiles from the web. Refreshes every day!";
+			text.style = "text-align: center;"
+			break;
 		case "love":
 			header.innerHTML = "Loves Me... Loves Me Not?";
 			thumbnail.src = "/images/hover/flower_large.gif";
@@ -167,10 +176,10 @@ function swap(link, delayTimeout = true) {
 			featureIndex = 3;
 			break;
 		case "delivery":
-			header.innerHTML = "NEW Autobahn Delivery Inc. Demo";
+			header.innerHTML = "Autobahn Delivery Inc. Demo";
 			thumbnail.src = "/images/hover/delivery.gif";
 			thumbnail.style.display = "inline-block";
-			thumbnail.classList.toggle("bespoke", true);
+			thumbnail.classList.toggle("bespoke", false);
 			text.innerHTML = "Coming to Android & iOS!";
 			text.style = "text-align: center;";
 			featureIndex = 4;
@@ -185,13 +194,14 @@ var featureIndex = 0;
 var timeoutID;
 function changeFeature() {
 	const features = [
-		"robotma-drawing",
 		"art",
-		"pong",
+		"recaptcha",
 		"asteroids",
 		"delivery",
+		"pong",
 		"woosh",
 		"spongebob",
+		"robotma-drawing",
 	];
 	swap(features[featureIndex], false);
 	featureIndex++;
