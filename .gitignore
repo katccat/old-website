@@ -1,5 +1,8 @@
 /assets/
-/old/
+/unused/
 .DS_Store
 ._*
 .localized
+__pycache__/
+.DS_Store
+._*
