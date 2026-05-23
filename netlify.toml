@@ -1,0 +1,6 @@
+[build]
+  command = "git submodule update --remote recaptcha && cd recaptcha && npm ci && npm run build && cp -r dist/. ."
+  publish = "."
+
+[build.environment]
+  GIT_SUBMODULE_STRATEGY = "recursive"
